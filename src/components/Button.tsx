@@ -12,9 +12,9 @@ type ButtonProps = {
 };
 
 const variants = {
-  primary: "bg-ink-950 text-white shadow-soft hover:bg-ink-800 dark:bg-white dark:text-ink-950 dark:hover:bg-ink-100",
+  primary: "bg-ink-950 text-white shadow-soft hover:-translate-y-0.5 hover:bg-ink-800 dark:bg-white dark:text-ink-950 dark:hover:bg-ink-100",
   secondary:
-    "border border-ink-200 bg-white text-ink-900 hover:border-signal-500 hover:text-signal-700 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-signal-400",
+    "border border-ink-200 bg-white text-ink-900 hover:-translate-y-0.5 hover:border-signal-500 hover:text-signal-700 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-signal-400",
   ghost: "text-ink-700 hover:bg-ink-100 hover:text-ink-950 dark:text-ink-200 dark:hover:bg-white/10 dark:hover:text-white",
 };
 

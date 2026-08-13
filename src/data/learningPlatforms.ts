@@ -12,7 +12,7 @@ export const learningPlatforms: LearningPlatform[] = [
     name: "Java",
     domain: "java.ukglab.com",
     description: "Java, Spring Boot, backend engineering and system design.",
-    status: "Coming soon",
+    status: "Building",
     accent: "orange",
   },
   {

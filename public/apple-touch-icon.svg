@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img" aria-label="UKG Lab">
+  <rect width="180" height="180" rx="36" fill="#080d16"/>
+  <path d="M34 42h112v10H34z" fill="#2dd4bf"/>
+  <text x="34" y="116" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="900">UK</text>
+  <text x="112" y="116" fill="#99f6e4" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">G</text>
+  <text x="38" y="143" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">LAB</text>
+</svg>

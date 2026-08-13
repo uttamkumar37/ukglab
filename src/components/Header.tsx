@@ -1,31 +1,37 @@
-import { Github, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Github, Menu, MessageCircle, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { navigation, siteConfig } from "../config/site";
 import { Button } from "./Button";
+import { Logo } from "./Logo";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 function navClasses({ isActive }: { isActive: boolean }) {
-  return `focus-ring rounded px-2.5 py-2 text-sm font-medium transition ${
-    isActive ? "text-signal-700 dark:text-signal-400" : "text-ink-600 hover:text-ink-950 dark:text-ink-300 dark:hover:text-white"
+  return `focus-ring relative rounded-md px-2.5 py-2 text-sm font-semibold transition ${
+    isActive ? "text-ink-950 after:absolute after:inset-x-2.5 after:bottom-1 after:h-px after:bg-signal-500 dark:text-white" : "text-ink-600 hover:text-ink-950 dark:text-ink-300 dark:hover:text-white"
   }`;
 }
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-200/70 bg-ink-50/88 backdrop-blur-xl dark:border-white/10 dark:bg-ink-950/82">
+    <header className={`sticky top-0 z-50 transition ${scrolled || open ? "border-b border-ink-200/80 bg-ink-50/90 shadow-[0_1px_0_rgba(15,23,42,.04)] backdrop-blur-xl dark:border-white/10 dark:bg-ink-950/88" : "border-b border-transparent bg-ink-50/70 backdrop-blur-sm dark:bg-ink-950/60"}`}>
       <div className="section-shell flex min-h-16 items-center justify-between gap-4">
-        <Link to="/" className="focus-ring flex items-center gap-3 rounded">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-ink-950 font-mono text-sm font-bold text-white dark:bg-white dark:text-ink-950">UK</span>
-          <span className="text-base font-semibold tracking-normal text-ink-950 dark:text-white">{siteConfig.name}</span>
-        </Link>
+        <Logo />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
           {navigation.map((item) =>
             item.href.includes("#") ? (
-              <a key={item.label} className="focus-ring rounded px-2.5 py-2 text-sm font-medium text-ink-600 transition hover:text-ink-950 dark:text-ink-300 dark:hover:text-white" href={item.href}>
+              <a key={item.label} className="focus-ring rounded-md px-2.5 py-2 text-sm font-semibold text-ink-600 transition hover:text-ink-950 dark:text-ink-300 dark:hover:text-white" href={item.href}>
                 {item.label}
               </a>
             ) : (
@@ -44,6 +50,9 @@ export function Header() {
           <Button href={siteConfig.resumePath} variant="secondary" external>
             Resume
           </Button>
+          <Button href="/contact" icon={MessageCircle}>
+            Let's Connect
+          </Button>
         </div>
 
         <button className="focus-ring rounded p-2 text-ink-800 dark:text-white lg:hidden" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-navigation" aria-label="Toggle navigation">
@@ -52,13 +61,22 @@ export function Header() {
       </div>
 
       {open ? (
-        <div id="mobile-navigation" className="border-t border-ink-200 bg-white px-4 py-4 dark:border-white/10 dark:bg-ink-950 lg:hidden">
-          <nav className="grid gap-1" aria-label="Mobile navigation">
-            {navigation.map((item) => (
-              <Link key={item.label} className="focus-ring rounded-md px-3 py-3 text-sm font-medium text-ink-700 hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-white/10" to={item.href} onClick={() => setOpen(false)}>
-                {item.label}
-              </Link>
-            ))}
+        <div id="mobile-navigation" className="border-t border-ink-200 bg-white/96 px-4 py-4 shadow-lift backdrop-blur-xl dark:border-white/10 dark:bg-ink-950/96 lg:hidden">
+          <nav className="grid gap-1 rounded-brand border border-ink-200 bg-ink-50 p-2 dark:border-white/10 dark:bg-white/[0.03]" aria-label="Mobile navigation">
+            {navigation.map((item) =>
+              item.href.includes("#") ? (
+                <a key={item.label} className="focus-ring rounded-md px-3 py-3 text-sm font-medium text-ink-700 hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-white/10" href={item.href} onClick={() => setOpen(false)}>
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.label} className="focus-ring rounded-md px-3 py-3 text-sm font-medium text-ink-700 hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-white/10" to={item.href} onClick={() => setOpen(false)}>
+                  {item.label}
+                </Link>
+              ),
+            )}
+            <Link className="focus-ring rounded-md bg-ink-950 px-3 py-3 text-sm font-semibold text-white dark:bg-white dark:text-ink-950" to="/contact" onClick={() => setOpen(false)}>
+              Let's Connect
+            </Link>
           </nav>
           <div className="mt-4 flex items-center justify-between gap-3">
             <ThemeSwitcher />

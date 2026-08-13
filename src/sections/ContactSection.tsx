@@ -1,4 +1,4 @@
-import { Copy, Mail } from "lucide-react";
+import { Copy, Linkedin, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../components/Button";
 import { SectionHeading } from "../components/SectionHeading";
@@ -14,12 +14,14 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="section-shell grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
-        <SectionHeading kicker="Contact" title="Simple, safe ways to reach Uttam." copy="This static site uses direct links instead of an insecure fake contact backend." />
-        <div className="rounded-lg border border-ink-200 bg-white p-6 shadow-soft dark:border-white/10 dark:bg-white/[0.03]">
+    <section id="contact" className="py-20 sm:py-24">
+      <div className="section-shell">
+        <div className="surface-card grid gap-10 rounded-xl p-6 md:p-8 lg:grid-cols-[.9fr_1.1fr]">
+          <SectionHeading kicker="Contact" title="Have an interesting problem to solve?" copy="I'm always interested in engineering discussions, collaboration, and opportunities to build useful software." />
+        <div>
           <div className="flex flex-wrap gap-3">
-            <Button href={`mailto:${siteConfig.email}`} icon={Mail}>Email Uttam</Button>
+            <Button href={`mailto:${siteConfig.email}`} icon={MessageCircle}>Let's Connect</Button>
+            <Button href={siteConfig.linkedinUrl} variant="secondary" external icon={Linkedin}>LinkedIn</Button>
             <button className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-ink-200 px-4 py-2.5 text-sm font-semibold text-ink-800 transition hover:border-signal-500 hover:text-signal-700 dark:border-white/10 dark:text-ink-100 dark:hover:text-signal-400" type="button" onClick={copyEmail}>
               <Copy size={17} aria-hidden="true" /> {copied ? "Copied" : "Copy email"}
             </button>
@@ -32,6 +34,7 @@ export function ContactSection() {
               </a>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>

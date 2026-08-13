@@ -5,14 +5,20 @@ import { Header } from "../components/Header";
 import { ScrollToTop } from "../components/ScrollToTop";
 
 export function AppLayout() {
-  const { pathname } = useLocation();
+  const { hash, pathname } = useLocation();
 
   useEffect(() => {
+    if (hash) {
+      window.requestAnimationFrame(() => {
+        document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      return;
+    }
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
+  }, [hash, pathname]);
 
   return (
-    <div className="min-h-screen bg-ink-50 text-ink-950 dark:bg-ink-950 dark:text-white">
+    <div className="min-h-screen bg-ink-50 text-ink-950 antialiased dark:bg-ink-950 dark:text-white">
       <Header />
       <main>
         <Outlet />

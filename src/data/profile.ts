@@ -2,14 +2,27 @@ import { siteConfig } from "../config/site";
 
 export const profile = {
   name: siteConfig.owner,
-  role: "Backend-focused software developer",
+  role: siteConfig.role,
   intro:
-    "I build practical software with Java, Spring Boot, REST APIs, databases, integrations, and deployment workflows. UKG Lab is where those projects, notes, experiments, and future learning platforms come together.",
-  about: [
-    "I am Uttam, a developer focused on backend engineering, API design, integration patterns, and the disciplined craft of building reliable systems.",
-    "My current work centers on Java, Spring Boot, SQL databases, REST APIs, Docker, GitHub Actions, and production-minded developer workflows.",
-    "I am actively deepening my knowledge in cloud fundamentals, system design, AI tooling, data structures, and the practices that turn small projects into dependable products.",
-    "UKG Lab exists as a long-term learning and building hub: a single place to share projects, document technical ideas, and connect future learning platforms across code, Java, DSA, AI, cloud, and mathematics.",
+    "I build backend systems, APIs, integrations, and practical software with Java, Spring Boot, SQL, Docker, and GitHub-first delivery workflows.",
+  pillars: [
+    {
+      title: "Who I am",
+      body: "Uttam — a software engineer focused on disciplined backend development and reliable integration work.",
+    },
+    {
+      title: "What I work on",
+      body: "Backend services, REST APIs, third-party integrations, OAuth/API authentication, webhooks, database-backed applications, and deployment workflows.",
+    },
+    {
+      title: "Engineering interests",
+      body: "Java, Spring Boot, distributed systems, API design, system design, developer tooling, cloud fundamentals, automation, and AI-assisted engineering.",
+    },
+    {
+      title: "Why UKG Lab exists",
+      body: "A public place to build, experiment, document, teach, and share useful engineering knowledge over time.",
+    },
   ],
-  highlights: ["Backend systems", "API integrations", "Technical learning", "Project shipping"],
+  highlights: ["Java backend engineering", "API integrations", "Technical learning", "Project shipping"],
+  trustStrip: ["Java", "Spring Boot", "REST APIs", "OAuth", "Webhooks", "SQL", "Docker", "GitHub Actions"],
 };

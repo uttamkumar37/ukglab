@@ -6,5 +6,6 @@
   <circle cx="940" cy="130" r="120" fill="#fb923c" opacity=".22"/>
   <text x="92" y="230" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="800">UKG Lab</text>
   <text x="100" y="306" fill="#99f6e4" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700">Learn. Build. Share.</text>
-  <text x="100" y="380" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="30">Uttam's developer lab for projects, notes, and learning platforms.</text>
+  <text x="100" y="380" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="30">Uttam · Software Engineer</text>
+  <text x="100" y="430" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="26">Java · Backend · APIs · Integrations</text>
 </svg>

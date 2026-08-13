@@ -5,7 +5,7 @@ import { SkillsSection } from "../sections/SkillsSection";
 import { updateSeo } from "../utils/seo";
 
 export function AboutPage() {
-  useEffect(() => updateSeo({ title: "About Uttam", description: "Learn about Uttam, the developer behind UKG Lab.", path: "/about" }), []);
+  useEffect(() => updateSeo({ title: "About Uttam", description: "Learn about Uttam, the software engineer behind UKG Lab and its backend, API, integration, and learning work.", path: "/about" }), []);
 
   return (
     <>

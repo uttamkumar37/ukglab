@@ -1,32 +1,40 @@
 import { Link } from "react-router-dom";
 import { learningPlatforms } from "../data/learningPlatforms";
 import { navigation, siteConfig, socialLinks } from "../config/site";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
     <footer className="border-t border-ink-200 bg-white dark:border-white/10 dark:bg-ink-950">
       <div className="section-shell grid gap-10 py-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
-          <p className="text-lg font-semibold text-ink-950 dark:text-white">{siteConfig.name}</p>
+          <Logo />
+          <p className="mt-4 text-sm font-semibold text-signal-700 dark:text-signal-400">{siteConfig.tagline}</p>
           <p className="mt-3 max-w-sm text-sm leading-6 text-ink-600 dark:text-ink-300">{siteConfig.description}</p>
         </div>
         <div>
-          <p className="font-semibold text-ink-950 dark:text-white">Navigation</p>
+          <p className="font-semibold text-ink-950 dark:text-white">Explore</p>
           <div className="mt-4 grid gap-2">
-            {navigation.slice(1).map((item) => (
-              <Link key={item.label} className="text-sm text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" to={item.href}>
-                {item.label}
-              </Link>
+            {navigation.filter((item) => ["About", "Projects", "Notes"].includes(item.label)).map((item) => (
+              item.href.includes("#") ? (
+                <a key={item.label} className="link-underline w-fit text-sm text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href={item.href}>
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.label} className="link-underline w-fit text-sm text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" to={item.href}>
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
         </div>
         <div>
-          <p className="font-semibold text-ink-950 dark:text-white">Learning</p>
+          <p className="font-semibold text-ink-950 dark:text-white">Lab</p>
           <div className="mt-4 grid gap-2">
-            {learningPlatforms.map((platform) => (
-              <a key={platform.domain} className="text-sm text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href={`https://${platform.domain}`} target="_blank" rel="noreferrer">
+            {learningPlatforms.filter((platform) => ["Code", "Java", "AI", "Cloud"].includes(platform.name)).map((platform) => (
+              <span key={platform.domain} className="text-sm text-ink-600 dark:text-ink-300">
                 {platform.name}
-              </a>
+              </span>
             ))}
           </div>
         </div>

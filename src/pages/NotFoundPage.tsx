@@ -10,7 +10,7 @@ export function NotFoundPage() {
     <section className="grid min-h-[70vh] place-items-center py-20">
       <div className="section-shell text-center">
         <p className="section-kicker">404</p>
-        <h1 className="section-title">This page is still outside the lab.</h1>
+        <h1 className="section-title">Experiment not found.</h1>
         <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-ink-600 dark:text-ink-300">
           The route may have moved, or the future platform is not live yet.
         </p>

@@ -29,7 +29,9 @@ export type ExperienceItem = {
 export type Project = {
   name: string;
   slug: string;
+  valueProposition: string;
   description: string;
+  problem: string;
   stack: string[];
   categories: string[];
   githubUrl: string;
@@ -38,14 +40,21 @@ export type Project = {
   featured: boolean;
   image: string;
   caseStudyUrl: string;
+  details: {
+    overview: string;
+    architecture: string[];
+    implementation: string[];
+    lessons: string[];
+  };
 };
 
 export type LearningPlatform = {
   name: string;
   domain: string;
   description: string;
-  status: "Planned" | "Coming soon" | "Active";
+  status: "Live" | "Building" | "Planned";
   accent: string;
+  href?: string;
 };
 
 export type Note = {

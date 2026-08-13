@@ -3,27 +3,24 @@ import { experience } from "../data/experience";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="border-y border-ink-200 bg-white py-20 dark:border-white/10 dark:bg-white/[0.02] sm:py-24">
       <div className="section-shell">
-        <SectionHeading kicker="Experience" title="A timeline of focused building." copy="Experience data is configuration-driven so roles, dates, technologies, and achievements can be updated in one place." />
-        <div className="mt-12 grid gap-8">
+        <SectionHeading kicker="Experience" title="Backend engineering, integrations, and delivery practice." copy="The timeline emphasizes the kinds of systems, APIs, platform integrations, and technical decisions Uttam is building around. All experience content remains data-driven." />
+        <div className="mt-12 grid gap-0">
           {experience.map((item) => (
-            <article key={`${item.company}-${item.role}`} className="relative border-l-2 border-signal-500/35 pl-6">
-              <span className="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-4 border-ink-50 bg-signal-500 dark:border-ink-950" />
-              <div className="rounded-lg border border-ink-200 bg-white p-6 shadow-soft dark:border-white/10 dark:bg-white/[0.03]">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <h3 className="text-xl font-semibold text-ink-950 dark:text-white">{item.role}</h3>
-                    <p className="mt-1 font-medium text-signal-700 dark:text-signal-400">{item.company}</p>
-                  </div>
-                  <span className="rounded bg-ink-100 px-3 py-1 text-sm font-semibold text-ink-700 dark:bg-white/10 dark:text-ink-200">{item.dates}</span>
-                </div>
-                <p className="mt-4 leading-7 text-ink-600 dark:text-ink-300">{item.description}</p>
+            <article key={`${item.company}-${item.role}`} className="grid gap-5 border-t border-ink-200 py-8 first:border-t-0 dark:border-white/10 lg:grid-cols-[280px_1fr]">
+              <div>
+                <p className="text-sm font-semibold text-signal-700 dark:text-signal-400">{item.dates}</p>
+                <p className="mt-2 text-lg font-semibold text-ink-950 dark:text-white">{item.company}</p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-ink-950 dark:text-white">{item.role}</h3>
+                <p className="mt-4 max-w-3xl leading-7 text-ink-600 dark:text-ink-300">{item.description}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {item.technologies.map((tech) => <span key={tech} className="rounded-md bg-signal-500/10 px-2.5 py-1 text-xs font-semibold text-signal-700 dark:text-signal-400">{tech}</span>)}
+                  {item.technologies.map((tech) => <span key={tech} className="rounded-md border border-ink-200 bg-ink-50 px-2.5 py-1 text-xs font-semibold text-ink-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-ink-200">{tech}</span>)}
                 </div>
                 <ul className="mt-5 grid gap-2 text-sm leading-6 text-ink-700 dark:text-ink-200">
-                  {item.achievements.map((achievement) => <li key={achievement}>• {achievement}</li>)}
+                  {item.achievements.map((achievement) => <li key={achievement} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-signal-500" />{achievement}</li>)}
                 </ul>
               </div>
             </article>
