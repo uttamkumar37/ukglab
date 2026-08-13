@@ -15,7 +15,7 @@ export function Footer() {
         <div>
           <p className="font-semibold text-ink-950 dark:text-white">Explore</p>
           <div className="mt-4 grid gap-2">
-            {navigation.filter((item) => ["About", "Projects", "Notes"].includes(item.label)).map((item) => (
+            {navigation.filter((item) => ["About", "Projects", "Writing", "Learn"].includes(item.label)).map((item) => (
               item.href.includes("#") ? (
                 <a key={item.label} className="link-underline w-fit text-sm text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href={item.href}>
                   {item.label}

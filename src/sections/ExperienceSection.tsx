@@ -5,7 +5,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="border-y border-ink-200 bg-white py-20 dark:border-white/10 dark:bg-white/[0.02] sm:py-24">
       <div className="section-shell">
-        <SectionHeading kicker="Experience" title="Backend engineering, integrations, and delivery practice." copy="The timeline emphasizes the kinds of systems, APIs, platform integrations, and technical decisions Uttam is building around. All experience content remains data-driven." />
+        <SectionHeading kicker="Experience" title="Building systems where reliability is part of the feature." copy="A concise view of the engineering work behind the portfolio, with the strongest outcomes and technologies kept visible." />
         <div className="mt-12 grid gap-0">
           {experience.map((item) => (
             <article key={`${item.company}-${item.role}`} className="grid gap-5 border-t border-ink-200 py-8 first:border-t-0 dark:border-white/10 lg:grid-cols-[280px_1fr]">

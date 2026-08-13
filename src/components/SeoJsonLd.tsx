@@ -14,8 +14,12 @@ export function SeoJsonLd() {
       "@context": "https://schema.org",
       "@type": "Person",
       name: siteConfig.owner,
+      jobTitle: `${siteConfig.role} - ${siteConfig.specialization}`,
       url: siteConfig.url,
+      email: `mailto:${siteConfig.email}`,
       sameAs: [siteConfig.githubUrl, siteConfig.linkedinUrl],
+      knowsAbout: ["Java", "Spring Boot", "Backend Engineering", "REST APIs", "Enterprise Integrations", "Multi-Tenant SaaS", "PostgreSQL", "Docker", "System Design"],
+      alumniOf: { "@type": "CollegeOrUniversity", name: siteConfig.education.institution },
       worksFor: { "@type": "Organization", name: siteConfig.name },
     },
   ];

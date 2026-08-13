@@ -1,21 +1,23 @@
 # UKG Lab
 
-UKG Lab is Uttam's central identity on the internet: a personal portfolio, developer lab, project showcase, technical notes library, and launchpad for future learning platforms under `ukglab.com`.
+UKG Lab is Uttam Kumar's single home on the internet: a recruiter-focused Software Engineer portfolio, developer lab, project showcase, technical notes library, and launchpad for future learning platforms under `ukglab.com`.
 
 ![UKG Lab screenshot placeholder](public/og-image.svg)
 
 ## Features
 
 - Premium responsive React + TypeScript interface
+- Recruiter-focused Java backend and enterprise integrations positioning
 - Light, dark, and system theme modes with persistent preference
 - Sticky desktop and mobile navigation
-- Configuration-driven profile, skills, experience, projects, learning platforms, SEO, and navigation
+- Configuration-driven profile, career, skills, experience, projects, learning platforms, SEO, and navigation
 - Featured and filtered project showcase
 - Local Markdown-powered notes with search, category filtering, tag filtering, and readable URLs
 - Static-safe contact links with copy-to-clipboard email
 - SEO metadata, canonical URL, Open Graph, Twitter metadata, sitemap, robots.txt, Person schema, and Website schema
 - GitHub Pages workflow using official Pages Actions
 - Custom domain support for `ukglab.com`
+- Professional profile photo, CloudCampus product captures, and recruiter resume
 
 ## Technology Stack
 
@@ -74,6 +76,9 @@ Key editable files:
 - `src/data/learningPlatforms.ts`
 - `src/data/notes.ts`
 - `src/content/notes/`
+- `public/profile/`
+- `public/projects/cloudcampus/`
+- `public/resume/Uttam-Kumar-Software-Engineer-Resume.pdf`
 
 ## GitHub Pages Deployment
 
@@ -118,7 +123,7 @@ For `www.ukglab.com`, add:
 
 ```text
 Type   Name  Value
-CNAME  www   uttamkumar.github.io
+CNAME  www   uttamkumar37.github.io
 ```
 
 Replace `uttamkumar` if your GitHub username is different.
@@ -136,10 +141,9 @@ git push -u origin main
 
 ## Values to Replace
 
-- `src/config/site.ts`: GitHub, LinkedIn, email, owner details if needed
-- `public/resume/`: add `uttam-resume.pdf`
-- `src/data/experience.ts`: real company history and achievements
-- `src/data/projects.ts`: real project links, live demos, screenshots, and case studies
+- `src/config/site.ts`: profile, career, contact, education, and proof-point configuration
+- `src/data/experience.ts`: company history and achievements
+- `src/data/projects.ts`: project links, screenshots, and case studies
 - `src/content/notes/`: expand with real articles
 - `public/sitemap.xml`: add new note/project URLs as content grows
 

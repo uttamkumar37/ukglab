@@ -56,8 +56,22 @@ export function ProjectDetailPage() {
               ) : null}
             </div>
           </div>
-          <ProjectVisual name={project.name} image={project.image} />
+          <ProjectVisual name={project.name} image={project.image} imagePath={project.imagePath} />
         </div>
+
+        {project.gallery?.length ? (
+          <section className="mt-14">
+            <h2 className="text-2xl font-semibold text-ink-950 dark:text-white">Product snapshots</h2>
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              {project.gallery.map((item) => (
+                <figure key={item.src} className="surface-card overflow-hidden rounded-brand">
+                  <img className="aspect-[16/10] w-full object-cover object-top" src={item.src} alt={item.alt} loading="lazy" />
+                  <figcaption className="p-4 text-sm font-semibold text-ink-700 dark:text-ink-200">{item.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {[

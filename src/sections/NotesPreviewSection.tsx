@@ -9,9 +9,9 @@ export function NotesPreviewSection() {
       <div className="section-shell">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading
-            kicker="Notes from the Lab"
-            title="Concise technical notes for things worth remembering."
-            copy="Early notes cover API design, deployment, Spring Boot, integrations, and the operating knowledge behind real project work."
+            kicker="Engineering Notes"
+            title="The decisions behind the systems."
+            copy="Notes on API design, deployment, Spring Boot, integrations, and the operating knowledge behind real project work."
           />
           <Link className="focus-ring inline-flex w-fit items-center gap-2 rounded-md text-sm font-semibold text-ink-800 hover:text-signal-700 dark:text-ink-100 dark:hover:text-signal-400" to="/notes">
             View all notes <ArrowRight size={17} aria-hidden="true" />

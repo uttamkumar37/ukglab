@@ -39,6 +39,8 @@ export type Project = {
   status: "Live" | "In progress" | "Concept" | "Maintained";
   featured: boolean;
   image: string;
+  imagePath?: string;
+  gallery?: { src: string; alt: string; caption: string }[];
   caseStudyUrl: string;
   details: {
     overview: string;

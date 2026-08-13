@@ -1,108 +1,121 @@
 import type { Project } from "../types/content";
 
-export const projectCategories = [
-  "All",
-  "Java",
-  "Spring Boot",
-  "Full Stack",
-  "API Integration",
-  "SaaS",
-  "DevOps",
-  "Experiments",
-];
+export const projectCategories = ["All", "Backend", "Full Stack", "SaaS", "APIs", "DevOps"];
 
 export const projects: Project[] = [
   {
-    name: "UKG Lab Hub",
-    slug: "ukg-lab-hub",
-    valueProposition: "A brand-grade home for projects, notes, experiments, and future learning platforms.",
+    name: "CloudCampus",
+    slug: "cloudcampus",
+    valueProposition: "A multi-tenant School ERP SaaS platform for schools, trusts, and multi-campus organizations.",
     description:
-      "The main ukglab.com experience: portfolio, project showcase, notes library, and learning ecosystem gateway.",
+      "CloudCampus brings tenant onboarding, role-based access, school isolation, academic operations, attendance, homework, exams, fees, and audit-aware workflows into one product direction.",
     problem:
-      "Personal portfolio sites often flatten work into a resume page. UKG Lab needed to explain Uttam, the engineering focus, and the future learning ecosystem quickly.",
+      "Schools and multi-campus organizations need shared digital workflows without losing boundaries between organizations, schools, roles, and data.",
+    stack: ["Java", "Spring Boot", "React", "PostgreSQL", "Flyway", "Docker"],
+    categories: ["Full Stack", "SaaS", "APIs", "DevOps"],
+    githubUrl: "https://github.com/uttamkumar37/CloudCampus",
+    status: "In progress",
+    featured: true,
+    image: "cloudcampus",
+    imagePath: "/projects/cloudcampus/school-admin-dashboard.png",
+    caseStudyUrl: "/projects/cloudcampus",
+    gallery: [
+      { src: "/projects/cloudcampus/tenant-onboarding.png", alt: "CloudCampus tenant onboarding screen", caption: "Tenant onboarding and school setup" },
+      { src: "/projects/cloudcampus/school-admin-dashboard.png", alt: "CloudCampus school admin dashboard", caption: "School admin dashboard" },
+      { src: "/projects/cloudcampus/teacher-workflow.png", alt: "CloudCampus teacher workflow", caption: "Teacher workflow" },
+      { src: "/projects/cloudcampus/parent-student-portal.png", alt: "CloudCampus parent and student portal", caption: "Parent and student portal" },
+    ],
+    details: {
+      overview:
+        "CloudCampus is shaped around a simple architectural question: which tenant, school, role, and workflow is an authenticated user allowed to touch?",
+      architecture: ["Java and Spring Boot modular backend", "Tenant and school hierarchy with server-owned access context", "React portal with PostgreSQL-oriented persistence and Flyway migrations"],
+      implementation: ["JWT authentication and RBAC", "Tenant onboarding and school access guards", "Student, staff, academic, audit, and operational workflow foundations", "Docker, Nginx, and GitHub Actions delivery path"],
+      lessons: ["Tenant context should be a backend-owned decision", "Role checks become safer when combined with tenant, school, and ownership checks", "Product scope and operational readiness need to be considered together"],
+    },
+  },
+  {
+    name: "BlogHub REST API",
+    slug: "bloghub-rest-api",
+    valueProposition: "A production-style blogging backend designed around secure access and operational visibility.",
+    description:
+      "A backend API for publishing content, managing comments, and exploring the security and operational concerns around a modern REST service.",
+    problem:
+      "Backend systems need clear authentication, content, persistence, and operational boundaries that remain easy to extend.",
+    stack: ["Java 17", "Spring Boot", "Spring Security", "JWT", "MySQL", "Redis", "Docker"],
+    categories: ["Backend", "APIs", "DevOps"],
+    githubUrl: "https://github.com/uttamkumar37/bloghub-rest-api",
+    status: "Maintained",
+    featured: true,
+    image: "bloghub",
+    caseStudyUrl: "/projects/bloghub-rest-api",
+    details: {
+      overview: "BlogHub explores the security, content, persistence, and operational boundaries around a modern REST API.",
+      architecture: ["Spring Security with JWT authentication and refresh-token lifecycle", "MySQL persistence with Flyway migrations", "Redis-backed token invalidation and cache-oriented workflows"],
+      implementation: ["Role-based access and protected workflows", "Keyset pagination and nested comments", "OpenAPI documentation, Actuator, Docker Compose, and CI"],
+      lessons: ["Stable contracts are as important as endpoint count", "Token lifecycle and invalidation deserve explicit design", "Operational visibility is part of backend quality"],
+    },
+  },
+  {
+    name: "ParkSmart",
+    slug: "parksmart",
+    valueProposition: "A parking management platform covering availability, booking, billing, and event-driven workflows.",
+    description:
+      "A full-stack application for slot selection, reservations, exit processing, billing, payment checkout, and administrator controls.",
+    problem:
+      "A simple booking surface touches state, concurrency, external payments, cache invalidation, events, and the frontend experience.",
+    stack: ["Java 21", "Spring Boot", "React", "PostgreSQL", "Redis", "Kafka", "Stripe"],
+    categories: ["Backend", "Full Stack", "APIs"],
+    githubUrl: "https://github.com/uttamkumar37/parking-lot",
+    status: "Maintained",
+    featured: true,
+    image: "parksmart",
+    caseStudyUrl: "/projects/parksmart",
+    details: {
+      overview: "ParkSmart is a full-stack parking lot management application focused on availability, booking, exit, billing, and administration.",
+      architecture: ["Spring Boot backend with React client", "PostgreSQL and Flyway persistence", "Redis cache and Kafka booking events"],
+      implementation: ["JWT authentication and role-aware administrator APIs", "Slot availability and visual slot selection", "Stripe checkout session creation and Docker Compose infrastructure"],
+      lessons: ["State transitions need to remain clear across UI and backend", "External payments and asynchronous events require explicit boundaries", "Cache consistency belongs in the workflow design"],
+    },
+  },
+  {
+    name: "Realtime Tic-Tac-Toe",
+    slug: "realtime-tic-tac-toe",
+    valueProposition: "A full-stack game platform exploring realtime state, protected APIs, and backend workflows.",
+    description: "React and Spring Boot project with multiplayer rooms, WebSocket updates, bot mode, match history, and player stats.",
+    problem: "Realtime products require the client, connection layer, cache, persistence, and authorization model to agree on state.",
+    stack: ["Spring Boot", "WebSocket/STOMP", "React", "TypeScript", "Redis", "MySQL"],
+    categories: ["Backend", "Full Stack", "APIs"],
+    githubUrl: "https://github.com/uttamkumar37/tic-tac-toe",
+    status: "Maintained",
+    featured: false,
+    image: "realtime",
+    caseStudyUrl: "/projects/realtime-tic-tac-toe",
+    details: {
+      overview: "A realtime game project for exploring multiplayer state, protected APIs, and event-driven client updates.",
+      architecture: ["React/TypeScript client with Spring Boot backend", "WebSocket/STOMP game updates", "Redis board cache and MySQL persistence"],
+      implementation: ["JWT authentication", "Bot mode with minimax", "Match history and player statistics"],
+      lessons: ["Realtime state needs a clear source of truth", "Connection lifecycle and authorization are linked", "Small products still benefit from explicit contracts"],
+    },
+  },
+  {
+    name: "UKG Lab",
+    slug: "ukg-lab",
+    valueProposition: "The unified portfolio, projects, notes, and learning platform behind ukglab.com.",
+    description: "A configuration-driven React application that brings Uttam's professional identity and learning ecosystem into one domain.",
+    problem: "A personal engineering ecosystem needs to explain the person, the work, and the learning path without scattering the story across disconnected sites.",
     stack: ["React", "TypeScript", "Tailwind CSS", "GitHub Pages"],
-    categories: ["Full Stack", "DevOps", "Experiments"],
+    categories: ["Full Stack", "DevOps"],
     githubUrl: "https://github.com/uttamkumar37/ukglab",
     liveUrl: "https://ukglab.com",
     status: "Live",
-    featured: true,
-    image: "hub",
-    caseStudyUrl: "/projects/ukg-lab-hub",
-    details: {
-      overview:
-        "UKG Lab is a static, production-ready React application that presents Uttam's engineering work, technical notes, and planned learning platforms from one central domain.",
-      architecture: ["Static Vite build deployed through GitHub Pages", "Configuration-driven profile, projects, skills, platforms, and notes", "Client-side routes with GitHub Pages fallback support"],
-      implementation: ["Built reusable sections and cards around typed data", "Centralized SEO configuration and structured data", "Added sitemap, robots.txt, custom domain CNAME, and official Pages workflow"],
-      lessons: ["A personal site can still behave like a product surface", "Static hosting works well when routing, SEO, and deployment constraints are designed upfront"],
-    },
-  },
-  {
-    name: "Spring Boot API Starter",
-    slug: "spring-boot-api-starter",
-    valueProposition: "A reference backend structure for clean Java REST API work.",
-    description:
-      "A clean starter pattern for Java REST APIs with layered architecture, validation, database access, and practical API documentation.",
-    problem:
-      "Backend projects need a repeatable structure for controllers, services, validation, persistence, and API contracts without becoming over-engineered.",
-    stack: ["Java", "Spring Boot", "PostgreSQL", "Maven"],
-    categories: ["Java", "Spring Boot", "API Integration"],
-    githubUrl: "https://github.com/uttamkumar/spring-boot-api-starter",
-    status: "In progress",
-    featured: true,
-    image: "api",
-    caseStudyUrl: "/projects/spring-boot-api-starter",
-    details: {
-      overview:
-        "A backend starter concept for building maintainable Spring Boot APIs with clear layers and production-minded conventions.",
-      architecture: ["Controller, service, repository layering", "Relational persistence with PostgreSQL", "Maven-based build and dependency management"],
-      implementation: ["Request validation near the API boundary", "Stable response shapes for client integrations", "Environment-safe configuration approach"],
-      lessons: ["The best starter projects document choices as much as code", "Clean API contracts make integration work easier to maintain"],
-    },
-  },
-  {
-    name: "Developer Notes Engine",
-    slug: "developer-notes-engine",
-    valueProposition: "A Markdown-first knowledge system with readable technical URLs.",
-    description:
-      "A local Markdown-driven notes system with readable URLs, category filters, tag filters, and fast static rendering.",
-    problem:
-      "Technical notes should be easy to publish and easy to browse without introducing a backend or database too early.",
-    stack: ["React", "Markdown", "TypeScript", "Vite"],
-    categories: ["Full Stack", "Experiments"],
-    githubUrl: "https://github.com/uttamkumar/developer-notes-engine",
-    status: "Maintained",
-    featured: true,
-    image: "notes",
-    caseStudyUrl: "/projects/developer-notes-engine",
-    details: {
-      overview:
-        "A lightweight notes architecture that imports local Markdown and exposes searchable, categorized article previews with stable URLs.",
-      architecture: ["Local Markdown under src/content/notes", "Typed note metadata in src/data/notes.ts", "Readable routes such as /notes/java/spring-boot-rest-api"],
-      implementation: ["Raw Markdown imports through Vite", "Small renderer for common note formatting", "Search, category filtering, and tag filtering on the listing page"],
-      lessons: ["A content workflow can start simple and still be structured", "Readable URLs are part of the learning experience"],
-    },
-  },
-  {
-    name: "Deployment Workflow Lab",
-    slug: "deployment-workflow-lab",
-    valueProposition: "Reusable deployment patterns for static apps and backend services.",
-    description:
-      "Reusable GitHub Actions and Docker workflow experiments for static apps and backend services.",
-    problem:
-      "Deployment workflows become easier to reuse when linting, type checks, builds, artifacts, and hosting targets are documented together.",
-    stack: ["Docker", "GitHub Actions", "Vite", "Cloud"],
-    categories: ["DevOps", "Experiments"],
-    githubUrl: "https://github.com/uttamkumar/deployment-workflow-lab",
-    status: "Concept",
     featured: false,
-    image: "deploy",
-    caseStudyUrl: "/projects/deployment-workflow-lab",
+    image: "ukglab",
+    caseStudyUrl: "/projects/ukg-lab",
     details: {
-      overview:
-        "An evolving collection of workflow experiments around GitHub Actions, Docker, and deployment fundamentals.",
-      architecture: ["GitHub Actions for repeatable automation", "Docker patterns for service packaging", "Static hosting paths for frontend delivery"],
-      implementation: ["Lint and build gates before deployment", "Pages artifact upload flow", "Custom domain and HTTPS considerations"],
-      lessons: ["Deployment is part of the product experience", "Simple automation removes avoidable release friction"],
+      overview: "UKG Lab is a static-first React application for a unified professional portfolio, project showcase, notes library, and learning ecosystem.",
+      architecture: ["Vite build deployed through GitHub Pages", "Typed, configuration-driven profile and content data", "Client-side routes with custom domain fallback support"],
+      implementation: ["Reusable sections, cards, notes, and project detail pages", "SEO metadata, structured data, sitemap, robots.txt, and custom domain", "Light/dark theme with accessible responsive navigation"],
+      lessons: ["A personal site can still be designed like a product surface", "A single domain can connect professional evidence with ongoing learning"],
     },
   },
 ];

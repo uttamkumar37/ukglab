@@ -45,7 +45,7 @@ export function ProjectsSection({ featuredOnly = false }: ProjectsSectionProps) 
               {selectedWork.map((project, index) => (
                 <article key={project.slug} id={project.slug} className="surface-card grid gap-6 rounded-xl p-4 md:p-6 lg:grid-cols-2 lg:items-center">
                   <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                    <ProjectVisual name={project.name} image={project.image} />
+                    <ProjectVisual name={project.name} image={project.image} imagePath={project.imagePath} />
                   </div>
                   <div className="p-1 md:p-4">
                     <div className="flex flex-wrap gap-2">

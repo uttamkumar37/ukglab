@@ -15,7 +15,7 @@ export function LearningSection() {
   return (
     <section id="learn" className="border-y border-ink-200 bg-white py-20 dark:border-white/10 dark:bg-white/[0.02] sm:py-24">
       <div className="section-shell">
-        <SectionHeading kicker="Explore UKG Lab" title="A learning ecosystem designed to grow deliberately." copy="These areas are planned as independent learning products. Until they are live, the main site presents their direction without sending visitors to broken subdomains." />
+        <SectionHeading kicker="More from the Lab" title="Learning tracks that grow alongside the work." copy="UKG Lab keeps professional evidence, technical notes, experiments, and future learning products together under one domain." />
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {learningPlatforms.map((platform) => (
             <article key={platform.domain} className="group rounded-brand border border-ink-200 bg-ink-50 p-5 transition hover:-translate-y-0.5 hover:border-signal-500 dark:border-white/10 dark:bg-ink-950/70">

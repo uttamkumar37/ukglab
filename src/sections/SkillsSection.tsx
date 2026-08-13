@@ -6,7 +6,7 @@ export function SkillsSection() {
   return (
     <section id="skills" className="py-20 sm:py-24">
       <div className="section-shell">
-        <SectionHeading kicker="Tech Stack" title="Technology grouped by engineering purpose." copy="No vanity percentages. The stack is organized around how it supports backend systems, integrations, data, delivery, and learning." />
+        <SectionHeading kicker="Engineering Expertise" title="A focused toolkit for dependable backend work." copy="The stack is organized around backend systems, integrations, architecture, data, and delivery." />
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {skills.map((group) => (
             <article key={group.category} className="surface-card rounded-brand p-5 transition hover:-translate-y-0.5 hover:border-signal-500 dark:hover:border-signal-400">

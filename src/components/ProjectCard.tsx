@@ -2,7 +2,15 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { Project } from "../types/content";
 
-export function ProjectVisual({ name, image }: { name: string; image: string }) {
+export function ProjectVisual({ name, image, imagePath }: { name: string; image: string; imagePath?: string }) {
+  if (imagePath) {
+    return (
+      <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-ink-200 bg-ink-100 dark:border-white/10 dark:bg-ink-900">
+        <img className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-[1.02]" src={imagePath} alt={`${name} interface preview`} loading="lazy" />
+      </div>
+    );
+  }
+
   return (
     <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-ink-200 bg-ink-950 dark:border-white/10">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(20,184,166,.38),transparent_28%),radial-gradient(circle_at_82%_34%,rgba(249,115,22,.24),transparent_27%)]" />
@@ -28,7 +36,7 @@ export function ProjectVisual({ name, image }: { name: string; image: string }) 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article id={project.slug} className="group surface-card rounded-brand p-4 transition hover:-translate-y-1 hover:border-signal-500 dark:hover:border-signal-400">
-      <ProjectVisual name={project.name} image={project.image} />
+      <ProjectVisual name={project.name} image={project.image} imagePath={project.imagePath} />
       <div className="mt-5 flex flex-wrap items-center gap-2">
         <span className="rounded bg-ink-100 px-2.5 py-1 text-xs font-semibold text-ink-700 dark:bg-white/10 dark:text-ink-200">{project.status}</span>
         {project.featured ? <span className="rounded bg-signal-500/10 px-2.5 py-1 text-xs font-semibold text-signal-700 dark:text-signal-400">Featured</span> : null}

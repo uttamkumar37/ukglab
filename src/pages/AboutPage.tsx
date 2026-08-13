@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { AboutSection } from "../sections/AboutSection";
 import { ExperienceSection } from "../sections/ExperienceSection";
+import { EducationSection } from "../sections/EducationSection";
 import { SkillsSection } from "../sections/SkillsSection";
 import { updateSeo } from "../utils/seo";
 
@@ -12,6 +13,7 @@ export function AboutPage() {
       <AboutSection />
       <SkillsSection />
       <ExperienceSection />
+      <EducationSection />
     </>
   );
 }

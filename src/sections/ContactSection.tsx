@@ -17,7 +17,7 @@ export function ContactSection() {
     <section id="contact" className="py-20 sm:py-24">
       <div className="section-shell">
         <div className="surface-card grid gap-10 rounded-xl p-6 md:p-8 lg:grid-cols-[.9fr_1.1fr]">
-          <SectionHeading kicker="Contact" title="Have an interesting problem to solve?" copy="I'm always interested in engineering discussions, collaboration, and opportunities to build useful software." />
+          <SectionHeading kicker="Let's Connect" title="Building reliable software is what I do." copy="Looking for a Java/backend engineer with enterprise integration and product-building experience? I would be glad to talk." />
         <div>
           <div className="flex flex-wrap gap-3">
             <Button href={`mailto:${siteConfig.email}`} icon={MessageCircle}>Let's Connect</Button>

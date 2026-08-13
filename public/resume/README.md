@@ -1,5 +1,3 @@
-Replace this file with Uttam's resume PDF, for example:
+The current recruiter resume is available at:
 
-public/resume/uttam-resume.pdf
-
-The site is already configured to link to `/resume/uttam-resume.pdf`.
+`/resume/Uttam-Kumar-Software-Engineer-Resume.pdf`

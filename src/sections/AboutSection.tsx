@@ -6,7 +6,7 @@ export function AboutSection() {
   return (
     <section id="about" className="py-20 sm:py-24">
       <div className="section-shell grid gap-12 lg:grid-cols-[.9fr_1.1fr]">
-        <SectionHeading kicker="About" title="A software engineer building the foundations of a long-term learning lab." copy={profile.intro} />
+        <SectionHeading kicker="About" title="Backend thinking with product context." copy={profile.intro} />
         <div className="grid gap-4 sm:grid-cols-2">
           {profile.pillars.map((pillar) => (
             <article key={pillar.title} className="surface-card rounded-brand p-5 transition hover:-translate-y-0.5 hover:border-signal-500 dark:hover:border-signal-400">

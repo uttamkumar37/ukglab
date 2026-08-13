@@ -47,11 +47,11 @@ export function Header() {
             <Github aria-hidden="true" size={20} />
           </a>
           <ThemeSwitcher />
-          <Button href={siteConfig.resumePath} variant="secondary" external>
+          <Button href="/resume" variant="secondary">
             Resume
           </Button>
           <Button href="/contact" icon={MessageCircle}>
-            Let's Connect
+            Contact
           </Button>
         </div>
 
@@ -75,12 +75,12 @@ export function Header() {
               ),
             )}
             <Link className="focus-ring rounded-md bg-ink-950 px-3 py-3 text-sm font-semibold text-white dark:bg-white dark:text-ink-950" to="/contact" onClick={() => setOpen(false)}>
-              Let's Connect
+              Contact
             </Link>
           </nav>
           <div className="mt-4 flex items-center justify-between gap-3">
             <ThemeSwitcher />
-            <Button href={siteConfig.resumePath} variant="secondary" external>
+              <Button href="/resume" variant="secondary">
               Resume
             </Button>
           </div>

@@ -12,6 +12,7 @@ import { NotePage } from "./pages/NotePage";
 import { NotesPage } from "./pages/NotesPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { ProjectDetailPage } from "./pages/ProjectDetailPage";
+import { ResumePage } from "./pages/ResumePage";
 import "./styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="about" element={<AboutPage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="projects/:slug" element={<ProjectDetailPage />} />
+          <Route path="resume" element={<ResumePage />} />
           <Route path="learn" element={<LearnPage />} />
           <Route path="notes" element={<NotesPage />} />
           <Route path="notes/:category/:slug" element={<NotePage />} />
