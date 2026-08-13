@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UKG Lab | Uttam's Developer Lab</title>
+    <meta
+      name="description"
+      content="UKG Lab is Uttam's central hub for software projects, technical notes, experiments, and future learning platforms."
+    />
+    <link rel="canonical" href="https://ukglab.com/" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="UKG Lab | Learn. Build. Share." />
+    <meta
+      property="og:description"
+      content="Explore Uttam's portfolio, backend projects, technical notes, and the UKG Lab learning ecosystem."
+    />
+    <meta property="og:url" content="https://ukglab.com/" />
+    <meta property="og:site_name" content="UKG Lab" />
+    <meta property="og:image" content="https://ukglab.com/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UKG Lab | Learn. Build. Share." />
+    <meta
+      name="twitter:description"
+      content="Uttam's central hub for projects, notes, experiments, and future learning platforms."
+    />
+    <meta name="twitter:image" content="https://ukglab.com/og-image.svg" />
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) history.replaceState(null, "", redirect);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
