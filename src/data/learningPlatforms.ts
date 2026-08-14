@@ -2,45 +2,19 @@ import type { LearningPlatform } from "../types/content";
 
 export const learningPlatforms: LearningPlatform[] = [
   {
+    name: "Math",
+    domain: "math.ukglab.com",
+    description: "Learn mathematics through structured concepts and practical problem solving.",
+    status: "Building",
+    accent: "signal",
+    href: "https://math.ukglab.com",
+  },
+  {
     name: "Code",
     domain: "code.ukglab.com",
-    description: "Programming tutorials, projects, APIs and development.",
+    description: "Learn programming and software engineering through practical development.",
     status: "Planned",
-    accent: "teal",
-  },
-  {
-    name: "Java",
-    domain: "java.ukglab.com",
-    description: "Java, Spring Boot, backend engineering and system design.",
-    status: "Building",
-    accent: "orange",
-  },
-  {
-    name: "DSA",
-    domain: "dsa.ukglab.com",
-    description: "Data structures, algorithms and interview preparation.",
-    status: "Planned",
-    accent: "blue",
-  },
-  {
-    name: "AI",
-    domain: "ai.ukglab.com",
-    description: "AI experiments, tools and learning.",
-    status: "Planned",
-    accent: "violet",
-  },
-  {
-    name: "Cloud",
-    domain: "cloud.ukglab.com",
-    description: "Cloud, Docker, deployments and DevOps.",
-    status: "Planned",
-    accent: "cyan",
-  },
-  {
-    name: "Maths",
-    domain: "maths.ukglab.com",
-    description: "Mathematics concepts and learning resources.",
-    status: "Planned",
-    accent: "rose",
+    accent: "flame",
+    href: "https://code.ukglab.com",
   },
 ];

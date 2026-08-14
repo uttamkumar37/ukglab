@@ -10,7 +10,7 @@ export const siteConfig = {
   url: "https://ukglab.com",
   tagline: "Engineering. Learning. Building.",
   description:
-    "UKG Lab is Uttam Kumar's engineering lab for backend systems, APIs, integrations, SaaS products, technical writing, and practical software experiments.",
+    "UKG Lab is a growing collection of learning platforms, software projects, and engineering experiments by Uttam Kumar.",
   email: "uttamkumar3797@gmail.com",
   resumePath: "/resume/Uttam-Kumar-Software-Engineer-Resume.pdf",
   githubUrl: "https://github.com/uttamkumar37",
@@ -35,14 +35,10 @@ export const siteConfig = {
 };
 
 export const navigation: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "Experience", href: "/experience" },
-  { label: "Stack", href: "/stack" },
-  { label: "Writing", href: "/writing" },
-  { label: "Lab", href: "/lab" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Products", href: "/#products" },
+  { label: "Projects", href: "/#projects" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const socialLinks: SocialLink[] = [

@@ -15,7 +15,7 @@ export function Footer() {
         <div>
           <p className="font-semibold text-ink-950 dark:text-white">Explore</p>
           <div className="mt-4 grid gap-2">
-            {navigation.filter((item) => ["About", "Projects", "Experience", "Stack", "Writing", "Lab", "Contact"].includes(item.label)).map((item) => (
+            {navigation.map((item) => (
               item.href.includes("#") ? (
                 <a key={item.label} className="link-underline w-fit text-sm text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href={item.href}>
                   {item.label}
@@ -29,12 +29,12 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="font-semibold text-ink-950 dark:text-white">Learning tracks</p>
+          <p className="font-semibold text-ink-950 dark:text-white">Products</p>
           <div className="mt-4 grid gap-2">
-            {learningPlatforms.filter((platform) => ["Code", "Java", "AI", "Cloud"].includes(platform.name)).map((platform) => (
-              <span key={platform.domain} className="text-sm text-ink-600 dark:text-ink-300">
+            {learningPlatforms.map((platform) => (
+              <a key={platform.domain} className="link-underline w-fit text-sm text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href={platform.href} target="_blank" rel="noreferrer">
                 {platform.name}
-              </span>
+              </a>
             ))}
           </div>
         </div>

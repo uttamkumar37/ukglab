@@ -16,8 +16,8 @@ export function ProjectsSection({ featuredOnly = false }: ProjectsSectionProps) 
     if (category === "All") return source;
     return source.filter((project) => project.categories.includes(category) || project.stack.includes(category));
   }, [category, featuredOnly]);
-  const selectedWork = projects.filter((project) => project.featured).slice(0, 2);
-  const remainingFeatured = projects.filter((project) => project.featured).slice(2);
+  const selectedWork = featuredOnly ? projects.filter((project) => project.slug === "cloudcampus") : projects.filter((project) => project.featured).slice(0, 2);
+  const remainingFeatured = featuredOnly ? [] : projects.filter((project) => project.featured).slice(2);
 
   return (
     <section id="projects" className="py-20 sm:py-24">
@@ -25,8 +25,8 @@ export function ProjectsSection({ featuredOnly = false }: ProjectsSectionProps) 
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             kicker="Projects"
-            title={featuredOnly ? "Selected Work" : "Project showcase and experiments."}
-            copy={featuredOnly ? "Larger project stories first, with enough context to understand the problem, implementation direction, and technology choices." : "Filter software projects, experiments, backend work, and deployment patterns by technology."}
+            title={featuredOnly ? "Selected Projects" : "Project showcase and experiments."}
+            copy={featuredOnly ? "Important engineering work from the lab, kept intentionally smaller than the product ecosystem." : "Filter software projects, experiments, backend work, and deployment patterns by technology."}
           />
           {!featuredOnly ? (
             <div className="flex max-w-full gap-2 overflow-x-auto pb-2" aria-label="Filter projects">
