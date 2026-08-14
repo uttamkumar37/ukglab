@@ -8,9 +8,9 @@ export const siteConfig = {
   specialization: "Java Backend & Integrations",
   domain: "ukglab.com",
   url: "https://ukglab.com",
-  tagline: "Learn. Build. Share.",
+  tagline: "Engineering. Learning. Building.",
   description:
-    "Uttam Kumar's home for Java backend engineering, enterprise integrations, multi-tenant SaaS projects, technical notes, and deliberate learning.",
+    "UKG Lab is Uttam Kumar's engineering lab for backend systems, APIs, integrations, SaaS products, technical writing, and practical software experiments.",
   email: "uttamkumar3797@gmail.com",
   resumePath: "/resume/Uttam-Kumar-Software-Engineer-Resume.pdf",
   githubUrl: "https://github.com/uttamkumar37",
@@ -36,12 +36,13 @@ export const siteConfig = {
 
 export const navigation: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/projects" },
-  { label: "Skills", href: "/about#skills" },
-  { label: "Writing", href: "/notes" },
-  { label: "Learn", href: "/learn" },
+  { label: "Experience", href: "/experience" },
+  { label: "Stack", href: "/stack" },
+  { label: "Writing", href: "/writing" },
+  { label: "Lab", href: "/lab" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -51,7 +52,7 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const seoConfig = {
-  defaultTitle: "Uttam Kumar | Java Backend & Software Engineer | UKG Lab",
+  defaultTitle: "Uttam Kumar | Software Engineer & Backend Developer | UKG Lab",
   titleTemplate: "%s | UKG Lab",
   defaultDescription: siteConfig.description,
   canonical: siteConfig.url,

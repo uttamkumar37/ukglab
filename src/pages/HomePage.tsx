@@ -6,6 +6,7 @@ import { EducationSection } from "../sections/EducationSection";
 import { ExperienceSection } from "../sections/ExperienceSection";
 import { HeroSection } from "../sections/HeroSection";
 import { LearningSection } from "../sections/LearningSection";
+import { LabSection } from "../sections/LabSection";
 import { ProjectsSection } from "../sections/ProjectsSection";
 import { SkillsSection } from "../sections/SkillsSection";
 import { TrustStripSection } from "../sections/TrustStripSection";
@@ -14,7 +15,7 @@ import { SnapshotSection } from "../sections/SnapshotSection";
 import { updateSeo } from "../utils/seo";
 
 export function HomePage() {
-  useEffect(() => updateSeo({ title: "Uttam Kumar | Java Backend & Software Engineer", description: "Uttam Kumar builds reliable Java backend systems, APIs, enterprise integrations, and multi-tenant SaaS products from UKG Lab.", path: "/" }), []);
+  useEffect(() => updateSeo({ title: "Uttam Kumar | Software Engineer & Backend Developer", description: "UKG Lab is Uttam Kumar's engineering lab for building backend systems, APIs, integrations, SaaS products, and practical software experiments.", path: "/" }), []);
 
   return (
     <>
@@ -27,6 +28,7 @@ export function HomePage() {
       <SkillsSection />
       <CloudCampusSection />
       <NotesPreviewSection />
+      <LabSection preview />
       <LearningSection />
       <EducationSection />
       <ContactSection />

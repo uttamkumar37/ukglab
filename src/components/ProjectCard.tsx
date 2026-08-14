@@ -6,7 +6,7 @@ export function ProjectVisual({ name, image, imagePath }: { name: string; image:
   if (imagePath) {
     return (
       <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-ink-200 bg-ink-100 dark:border-white/10 dark:bg-ink-900">
-        <img className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-[1.02]" src={imagePath} alt={`${name} interface preview`} loading="lazy" />
+        <img className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-[1.02]" src={imagePath} alt={`${name} interface preview`} loading="lazy" width="1440" height="1050" />
       </div>
     );
   }

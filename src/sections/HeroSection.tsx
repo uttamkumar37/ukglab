@@ -1,4 +1,4 @@
-import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 import { Button } from "../components/Button";
 import { siteConfig } from "../config/site";
 
@@ -10,31 +10,27 @@ export function HeroSection() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-ink-200 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-ink-600 shadow-soft dark:border-white/10 dark:bg-white/[0.04] dark:text-ink-300">
             <span className="h-2 w-2 rounded-full bg-signal-500" />
-            {siteConfig.role} · {siteConfig.specialization}
+            {siteConfig.name} · {siteConfig.specialization}
           </div>
-          <h1 className="mt-7 max-w-4xl text-5xl font-semibold tracking-normal text-ink-950 dark:text-white sm:text-6xl lg:text-7xl">
-            {siteConfig.owner}
+          <p className="mt-7 text-sm font-bold uppercase tracking-[0.22em] text-signal-700 dark:text-signal-400">UKG LAB</p>
+          <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-normal text-ink-950 dark:text-white sm:text-6xl lg:text-7xl">
+            {siteConfig.tagline}
           </h1>
           <p className="mt-6 max-w-2xl text-2xl font-semibold leading-tight tracking-tight text-ink-900 dark:text-white sm:text-3xl">
-            I build reliable backend systems, APIs and enterprise integrations.
+            A practical engineering lab for building useful software.
           </p>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-ink-700 dark:text-ink-200">
-            I work with Java and Spring Boot across backend engineering, REST APIs, integration platforms, and multi-tenant SaaS products.
+            Backend systems, APIs, integrations, SaaS products, technical writing, and experiments come together here. Uttam Kumar is the engineer behind UKG Lab.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/projects" icon={ArrowRight}>View My Work</Button>
-            <Button href={siteConfig.resumePath} variant="secondary" external download icon={Download}>Download Resume</Button>
+            <Button href="/projects" icon={ArrowRight}>Explore Projects</Button>
+            <Button href="/about" variant="secondary">About Me</Button>
           </div>
           <div className="mt-7 flex flex-wrap items-center gap-5 text-sm font-semibold">
             <a className="focus-ring inline-flex items-center gap-2 rounded text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
-              <Github size={17} aria-hidden="true" /> GitHub
+              <Github size={17} aria-hidden="true" /> Explore GitHub
             </a>
-            <a className="focus-ring inline-flex items-center gap-2 rounded text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href={siteConfig.linkedinUrl} target="_blank" rel="noreferrer">
-              <Linkedin size={17} aria-hidden="true" /> LinkedIn
-            </a>
-            <a className="focus-ring inline-flex items-center gap-2 rounded text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href="/contact">
-              Contact <ArrowRight size={17} aria-hidden="true" />
-            </a>
+            <span className="text-ink-500 dark:text-ink-400">The engineer behind UKG Lab: {siteConfig.owner}</span>
           </div>
           <div className="mt-8 flex flex-wrap gap-2 text-sm font-semibold text-ink-600 dark:text-ink-300">
             <span className="rounded-md border border-ink-200 bg-white px-3 py-2 shadow-soft dark:border-white/10 dark:bg-white/[0.04]">{siteConfig.career.experience}</span>

@@ -15,6 +15,7 @@ export type SkillGroup = {
   category: string;
   description: string;
   skills: string[];
+  kind?: "core" | "exploring";
 };
 
 export type ExperienceItem = {
@@ -57,6 +58,17 @@ export type LearningPlatform = {
   status: "Live" | "Building" | "Planned";
   accent: string;
   href?: string;
+};
+
+export type LabExperiment = {
+  title: string;
+  description: string;
+  status: "Experiment" | "Building" | "Stable" | "Archived";
+  technology: string[];
+  date: string;
+  githubUrl?: string;
+  demoUrl?: string;
+  relatedProjectSlug?: string;
 };
 
 export type Note = {

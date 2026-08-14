@@ -7,14 +7,15 @@ UKG Lab is Uttam Kumar's single home on the internet: a recruiter-focused Softwa
 ## Features
 
 - Premium responsive React + TypeScript interface
+- UKG Lab positioning for engineering, learning, and building
 - Recruiter-focused Java backend and enterprise integrations positioning
 - Light, dark, and system theme modes with persistent preference
-- Sticky desktop and mobile navigation
-- Configuration-driven profile, career, skills, experience, projects, learning platforms, SEO, and navigation
+- Sticky responsive navigation with skip link and accessible mobile menu
+- Configuration-driven profile, career, skills, experience, projects, lab experiments, learning platforms, SEO, and navigation
 - Featured and filtered project showcase
 - Local Markdown-powered notes with search, category filtering, tag filtering, and readable URLs
 - Static-safe contact links with copy-to-clipboard email
-- SEO metadata, canonical URL, Open Graph, Twitter metadata, sitemap, robots.txt, Person schema, and Website schema
+- Route-aware SEO metadata, canonical URLs, Open Graph, Twitter metadata, sitemap, robots.txt, Person, Website, SoftwareApplication, and Article schema
 - GitHub Pages workflow using official Pages Actions
 - Custom domain support for `ukglab.com`
 - Professional profile photo, CloudCampus product captures, and recruiter resume
@@ -74,6 +75,7 @@ Key editable files:
 - `src/data/experience.ts`
 - `src/data/projects.ts`
 - `src/data/learningPlatforms.ts`
+- `src/data/lab.ts`
 - `src/data/notes.ts`
 - `src/content/notes/`
 - `public/profile/`
@@ -83,6 +85,15 @@ Key editable files:
 ## GitHub Pages Deployment
 
 The workflow at `.github/workflows/deploy.yml` deploys automatically when code is pushed to `main`.
+
+## Primary Routes
+
+- `/projects` and `/projects/:slug` for verified project work and case studies
+- `/experience` for the engineering journey
+- `/stack` for core and exploring technologies
+- `/lab` for experiments and product prototypes
+- `/writing` for technical notes and future articles
+- `/about`, `/learn`, `/resume`, and `/contact` for supporting surfaces
 
 Repository settings:
 

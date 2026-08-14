@@ -5,7 +5,7 @@ export const profile = {
   role: siteConfig.role,
   specialization: siteConfig.specialization,
   intro:
-    "I build reliable backend systems, APIs, and enterprise integrations with Java and Spring Boot. UKG Lab is the single home for my professional work, CloudCampus product building, technical notes, and ongoing learning.",
+    "UKG Lab is where I build, study, and share practical software. I focus on reliable backend systems, APIs, and enterprise integrations with Java and Spring Boot, while using product work and experiments to keep learning visible.",
   pillars: [
     {
       title: "Who I am",
@@ -25,5 +25,5 @@ export const profile = {
     },
   ],
   highlights: ["Java backend engineering", "Enterprise integrations", "Multi-tenant SaaS", "Product shipping"],
-  trustStrip: ["Java", "Spring Boot", "REST APIs", "Integrations", "PostgreSQL / SQL", "SaaS", "Docker", "System Design"],
+  trustStrip: ["Java", "Spring Boot", "REST APIs", "Integrations", "SQL", "SaaS", "Docker", "System Design"],
 };

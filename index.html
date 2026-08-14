@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uttam Kumar | Java Backend &amp; Software Engineer | UKG Lab</title>
+    <title>Uttam Kumar | Software Engineer &amp; Backend Developer | UKG Lab</title>
     <meta
       name="description"
-      content="Uttam Kumar's home for Java backend engineering, enterprise integrations, multi-tenant SaaS projects, technical notes, and deliberate learning."
+      content="UKG Lab is Uttam Kumar's engineering lab for backend systems, APIs, integrations, SaaS products, technical writing, and practical software experiments."
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
@@ -14,23 +14,30 @@
     <link rel="canonical" href="https://ukglab.com/" />
     <meta name="theme-color" content="#0f172a" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Uttam Kumar | Java Backend &amp; Software Engineer" />
+    <meta property="og:title" content="Uttam Kumar | Software Engineer &amp; Backend Developer | UKG Lab" />
     <meta
       property="og:description"
-      content="Software Engineer building reliable Java backend systems, APIs, enterprise integrations, and multi-tenant SaaS products from UKG Lab."
+      content="UKG Lab is Uttam Kumar's engineering lab for backend systems, APIs, integrations, SaaS products, technical writing, and practical software experiments."
     />
     <meta property="og:url" content="https://ukglab.com/" />
     <meta property="og:site_name" content="UKG Lab" />
     <meta property="og:image" content="https://ukglab.com/og-image.svg" />
+    <meta property="og:image:alt" content="UKG Lab — Engineering. Learning. Building." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Uttam Kumar | Java Backend &amp; Software Engineer" />
+    <meta name="twitter:creator" content="@uttamkumar37" />
+    <meta name="twitter:title" content="Uttam Kumar | Software Engineer &amp; Backend Developer | UKG Lab" />
     <meta
       name="twitter:description"
-      content="Java backend systems, enterprise integrations, multi-tenant SaaS, projects, notes, and learning from UKG Lab."
+      content="Backend systems, APIs, integrations, SaaS products, technical writing, and practical software experiments from UKG Lab."
     />
     <meta name="twitter:image" content="https://ukglab.com/og-image.svg" />
     <script>
       (function () {
+        var theme = localStorage.getItem("ukglab-theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var isDark = theme === "dark" || (theme !== "light" && prefersDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
         var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
         if (redirect && redirect !== location.href) history.replaceState(null, "", redirect);

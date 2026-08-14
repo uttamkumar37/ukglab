@@ -15,7 +15,7 @@ export function Footer() {
         <div>
           <p className="font-semibold text-ink-950 dark:text-white">Explore</p>
           <div className="mt-4 grid gap-2">
-            {navigation.filter((item) => ["About", "Projects", "Writing", "Learn"].includes(item.label)).map((item) => (
+            {navigation.filter((item) => ["About", "Projects", "Experience", "Stack", "Writing", "Lab", "Contact"].includes(item.label)).map((item) => (
               item.href.includes("#") ? (
                 <a key={item.label} className="link-underline w-fit text-sm text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" href={item.href}>
                   {item.label}
@@ -29,7 +29,7 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="font-semibold text-ink-950 dark:text-white">Lab</p>
+          <p className="font-semibold text-ink-950 dark:text-white">Learning tracks</p>
           <div className="mt-4 grid gap-2">
             {learningPlatforms.filter((platform) => ["Code", "Java", "AI", "Cloud"].includes(platform.name)).map((platform) => (
               <span key={platform.domain} className="text-sm text-ink-600 dark:text-ink-300">
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-ink-200 py-5 text-center text-sm text-ink-500 dark:border-white/10 dark:text-ink-400">
-        © {new Date().getFullYear()} {siteConfig.name}. Built for learning, projects, and experiments.
+        © {new Date().getFullYear()} {siteConfig.name}. Built by {siteConfig.owner}.
       </div>
     </footer>
   );

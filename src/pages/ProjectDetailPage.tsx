@@ -15,6 +15,7 @@ export function ProjectDetailPage() {
         title: project.name,
         description: project.valueProposition,
         path: `/projects/${project.slug}`,
+        image: project.imagePath ? `${window.location.origin}${project.imagePath}` : undefined,
       });
     }
   }, [project]);
@@ -65,7 +66,7 @@ export function ProjectDetailPage() {
             <div className="mt-6 grid gap-5 md:grid-cols-2">
               {project.gallery.map((item) => (
                 <figure key={item.src} className="surface-card overflow-hidden rounded-brand">
-                  <img className="aspect-[16/10] w-full object-cover object-top" src={item.src} alt={item.alt} loading="lazy" />
+                  <img className="aspect-[16/10] w-full object-cover object-top" src={item.src} alt={item.alt} loading="lazy" width="1440" height="1050" />
                   <figcaption className="p-4 text-sm font-semibold text-ink-700 dark:text-ink-200">{item.caption}</figcaption>
                 </figure>
               ))}

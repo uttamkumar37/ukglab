@@ -4,6 +4,10 @@ type Theme = "light" | "dark" | "system";
 
 const storageKey = "ukglab-theme";
 
+function isTheme(value: string | null): value is Theme {
+  return value === "light" || value === "dark" || value === "system";
+}
+
 function applyTheme(theme: Theme) {
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const isDark = theme === "dark" || (theme === "system" && prefersDark);
@@ -14,7 +18,8 @@ function applyTheme(theme: Theme) {
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "system";
-    return (localStorage.getItem(storageKey) as Theme | null) ?? "system";
+    const stored = localStorage.getItem(storageKey);
+    return isTheme(stored) ? stored : "system";
   });
 
   useEffect(() => {

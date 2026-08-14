@@ -1,7 +1,13 @@
 import { siteConfig } from "../config/site";
+import { notes } from "../data/notes";
+import { projects } from "../data/projects";
+import { useLocation } from "react-router-dom";
 
 export function SeoJsonLd() {
-  const schema = [
+  const { pathname } = useLocation();
+  const project = pathname.startsWith("/projects/") ? projects.find((item) => pathname === item.caseStudyUrl) : undefined;
+  const note = pathname.startsWith("/notes/") || pathname.startsWith("/writing/") ? notes.find((item) => pathname.endsWith(item.slug)) : undefined;
+  const schema: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -24,5 +30,31 @@ export function SeoJsonLd() {
     },
   ];
 
-  return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
+  if (project) {
+    schema.push({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: project.name,
+      description: project.description,
+      url: `${siteConfig.url}${project.caseStudyUrl}`,
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Web",
+      codeRepository: project.githubUrl,
+    });
+  }
+
+  if (note) {
+    schema.push({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: note.title,
+      description: note.description,
+      datePublished: note.publishedDate,
+      dateModified: note.updatedDate,
+      author: { "@type": "Person", name: siteConfig.owner, url: siteConfig.url },
+      mainEntityOfPage: `${siteConfig.url}${pathname}`,
+    });
+  }
+
+  return <script id="ukglab-jsonld" type="application/ld+json">{JSON.stringify(schema)}</script>;
 }

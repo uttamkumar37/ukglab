@@ -11,7 +11,7 @@ export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="flex rounded-md border border-ink-200 bg-white p-1 dark:border-white/10 dark:bg-white/5" aria-label="Theme preference">
+    <div className="flex rounded-md border border-ink-200 bg-white p-1 dark:border-white/10 dark:bg-white/5" role="group" aria-label="Theme preference">
       {options.map(({ value, label, icon: Icon }) => (
         <button
           key={value}

@@ -19,8 +19,9 @@ export function AppLayout() {
 
   return (
     <div className="min-h-screen bg-ink-50 text-ink-950 antialiased dark:bg-ink-950 dark:text-white">
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Outlet />
       </main>
       <Footer />

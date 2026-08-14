@@ -5,15 +5,19 @@ import { notes } from "../data/notes";
 import { renderMarkdown } from "../utils/markdown";
 import { updateSeo } from "../utils/seo";
 
-export function NotePage() {
+type NotePageProps = {
+  routeBase?: "/notes" | "/writing";
+};
+
+export function NotePage({ routeBase = "/notes" }: NotePageProps) {
   const { category, slug } = useParams();
   const note = notes.find((item) => item.slug === `${category}/${slug}`);
 
   useEffect(() => {
     if (note) {
-      updateSeo({ title: note.title, description: note.description, path: `/notes/${note.slug}`, type: "article" });
+      updateSeo({ title: note.title, description: note.description, path: `${routeBase}/${note.slug}`, type: "article" });
     }
-  }, [note]);
+  }, [note, routeBase]);
 
   if (!note) {
     return (
@@ -21,7 +25,7 @@ export function NotePage() {
         <div className="section-shell">
           <p className="section-kicker">Not found</p>
           <h1 className="section-title">This note does not exist yet.</h1>
-          <Link className="focus-ring mt-8 inline-flex rounded-md bg-ink-950 px-4 py-2.5 text-sm font-semibold text-white dark:bg-white dark:text-ink-950" to="/notes">Back to notes</Link>
+          <Link className="focus-ring mt-8 inline-flex rounded-md bg-ink-950 px-4 py-2.5 text-sm font-semibold text-white dark:bg-white dark:text-ink-950" to={routeBase}>Back to {routeBase === "/writing" ? "writing" : "notes"}</Link>
         </div>
       </section>
     );
@@ -30,8 +34,8 @@ export function NotePage() {
   return (
     <article className="py-20">
       <div className="section-shell max-w-4xl">
-        <Link className="focus-ring inline-flex items-center gap-2 rounded text-sm font-semibold text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" to="/notes">
-          <ArrowLeft size={17} aria-hidden="true" /> Notes
+        <Link className="focus-ring inline-flex items-center gap-2 rounded text-sm font-semibold text-ink-600 hover:text-signal-700 dark:text-ink-300 dark:hover:text-signal-400" to={routeBase}>
+          <ArrowLeft size={17} aria-hidden="true" /> {routeBase === "/writing" ? "Writing" : "Notes"}
         </Link>
         <div className="mt-8 flex flex-wrap gap-2">
           <span className="rounded bg-signal-500/10 px-3 py-1 text-sm font-semibold text-signal-700 dark:text-signal-400">{note.category}</span>

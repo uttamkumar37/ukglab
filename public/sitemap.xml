@@ -8,11 +8,18 @@
   <url><loc>https://ukglab.com/projects/parksmart</loc><priority>0.8</priority></url>
   <url><loc>https://ukglab.com/projects/realtime-tic-tac-toe</loc><priority>0.7</priority></url>
   <url><loc>https://ukglab.com/projects/ukg-lab</loc><priority>0.8</priority></url>
+  <url><loc>https://ukglab.com/experience</loc><priority>0.8</priority></url>
+  <url><loc>https://ukglab.com/stack</loc><priority>0.8</priority></url>
+  <url><loc>https://ukglab.com/lab</loc><priority>0.8</priority></url>
   <url><loc>https://ukglab.com/learn</loc><priority>0.8</priority></url>
+  <url><loc>https://ukglab.com/writing</loc><priority>0.8</priority></url>
   <url><loc>https://ukglab.com/notes</loc><priority>0.8</priority></url>
   <url><loc>https://ukglab.com/contact</loc><priority>0.7</priority></url>
   <url><loc>https://ukglab.com/resume</loc><priority>0.7</priority></url>
   <url><loc>https://ukglab.com/notes/java/spring-boot-rest-api</loc><priority>0.7</priority></url>
   <url><loc>https://ukglab.com/notes/docker/static-site-github-pages</loc><priority>0.6</priority></url>
   <url><loc>https://ukglab.com/notes/system-design/api-integration-checklist</loc><priority>0.6</priority></url>
+  <url><loc>https://ukglab.com/writing/java/spring-boot-rest-api</loc><priority>0.7</priority></url>
+  <url><loc>https://ukglab.com/writing/docker/static-site-github-pages</loc><priority>0.6</priority></url>
+  <url><loc>https://ukglab.com/writing/system-design/api-integration-checklist</loc><priority>0.6</priority></url>
 </urlset>
